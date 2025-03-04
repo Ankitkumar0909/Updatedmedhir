@@ -70,7 +70,7 @@ pipeline {
                             sudo -u podman -i podman stop backend || true;
                             sudo -u podman -i podman rm backend || true;
                             sudo -u podman -i podman load -i ${SHARED_DIR}/${TAR_FILE};
-                            sudo -u podman -i podman run -d -- name backend -- network shared -p 4000:4000  backend:latest;
+                            sudo -u podman -i podman run -d --name backend --network shared -p 4000:4000 backend:latest
                             echo '✅ Backend container started successfully.'
                             "
                         """
