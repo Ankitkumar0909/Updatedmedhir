@@ -9,7 +9,7 @@ pipeline {
         SSH_USER = "ankitm"
         SERVER_IP = "192.168.0.200"
         SHARED_DIR = "/home/ankitm/shared"
-        GIT_REPO = "https://github.com/Ankitkumar0909/Medhircode.git"
+        GIT_REPO = "https://github.com/Ankitkumar0909/Updatedmedhir.git"
         GIT_BRANCH = "main"
     }
 
