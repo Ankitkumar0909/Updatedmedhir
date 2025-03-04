@@ -93,7 +93,7 @@ pipeline {
                             sudo -u podman -i podman logs backend;
                             "
                         """
-                        echo "✅ Deployment verification completed."
+                        echo "✅ Deployment verification completed done."
                     } catch (Exception e) {
                         error "❌ Deployment verification failed: ${e.message}"
                     }
