@@ -21,17 +21,16 @@ pipeline {
         }
 
         stage('Build JAR File with Gradle') {
-            steps {
-                script {
-                    try {
-                        sh './gradlew clean build'
-                        echo "✅ Gradle build completed successfully."
-                    } catch (Exception e) {
-                        error "❌ Gradle build failed: ${e.message}"
-                    }
-                }
+    steps {
+        script {
+            catchError(buildResult: 'FAILURE') { // Captures errors cleanly
+                sh 'chmod +x ./gradlew'  // Ensure execution permission
+                sh './gradlew clean build'
+                echo "✅ Gradle build completed successfully."
             }
         }
+    }
+}
 
         stage('Build and Save Docker Image') {
             steps {
